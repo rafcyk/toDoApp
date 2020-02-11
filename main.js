@@ -3,31 +3,43 @@ const ul = document.querySelector('div.tasks div.wrapTasks ul');
 const inputTask = document.querySelector('div.containerAddTask div.wrapAddTask input');
 
 const deleteIconSrc = 'deleteIcon.png';
+const timeAdd = new Date();
 
 
 const addTask = () => {
-    const liItem = document.createElement('li');
-    liItem.textContent = inputTask.value;
+    if (inputTask.value) {
+        const liItem = document.createElement('li');
+        liItem.textContent = inputTask.value;
 
-    const spanDeleteIcon = document.createElement('span');
+        const spanDeleteIcon = document.createElement('span');
 
-    const deleteIcon = document.createElement('img');
-    deleteIcon.src = deleteIconSrc;
+        spanDeleteIcon.textContent = `${timeAdd.getDate()}.${timeAdd.getMonth() + 1 < 10 ? "0" + timeAdd.getMonth() : timeAdd.getMonth() + 1}.${timeAdd.getFullYear()}`
 
-    ul.appendChild(liItem);
-    liItem.appendChild(spanDeleteIcon);
-    spanDeleteIcon.appendChild(deleteIcon);
+        console.log()
+
+        const deleteIcon = document.createElement('img');
+        deleteIcon.src = deleteIconSrc;
+
+        ul.appendChild(liItem);
+        liItem.appendChild(spanDeleteIcon);
+        spanDeleteIcon.appendChild(deleteIcon);
 
 
-    inputTask.value = '';
+        inputTask.value = '';
 
 
 
-    const removeTask = (e) => {
-        e.target.parentNode.parentNode.remove();
+        const removeTask = (e) => {
+            e.target.parentNode.parentNode.remove();
+        }
+
+        deleteIcon.addEventListener('click', removeTask);
+
     }
 
-    spanDeleteIcon.addEventListener('click', removeTask);
+    else {
+        alert('Wpisz zadanie do zrobienia.')
+    }
 }
 
 
