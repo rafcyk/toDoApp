@@ -56,21 +56,28 @@ div.containerAddTask div.wrapAddTask button.addTask:hover{
 
 /* ---------------------TASKS------------------- */
 
-div.task{
+div.tasks{
     width:100%;
     min-height: 50vh;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top:50px;
+    padding: 50px 0;
 }
 
-div.task h2{
+div.tasks div.wrapTasks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.tasks div.wrapTasks h2{
     font-size: 4rem;
     padding-bottom: 50px;
+    margin:0 auto;
 }
 
-div.task ul{
+div.tasks div.wrapTasks ul{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -78,10 +85,18 @@ div.task ul{
     list-style: none;
 }
 
-div.task ul li{
+div.tasks div.wrapTasks ul li{
+    position: relative;
     font-size: 2.5rem;
     margin-top: 20px;
     border: 2px solid black;
+    border-radius: 10px;
     width:500px;
     padding:10px 20px;
+}
+
+div.tasks div.wrapTasks ul li span{
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
 }
