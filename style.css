@@ -1,0 +1,87 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+
+/* ---------------CONTAINER ADD TASK-------------- */
+div.containerAddTask{
+    width:100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(45deg, rgb(0, 255, 213), rgb(94, 255, 0));
+}
+
+div.containerAddTask div.wrapAddTask{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.containerAddTask div.wrapAddTask input{
+    display:block;
+    width:500px;
+    height: 50px;
+    border:2px solid #555;
+    border-radius: 10px;
+    font-size: 3rem;
+    padding: 10px 25px;
+    margin-bottom: 50px;
+}
+
+div.containerAddTask div.wrapAddTask button.addTask{
+    padding: 10px 25px;
+    font-size: 2.5rem; 
+    border:2px solid #555;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+div.containerAddTask div.wrapAddTask button.addTask:hover{
+    border-color: white;
+    background-color: #000;
+    color:white;
+}
+
+/* ---------------------TASKS------------------- */
+
+div.task{
+    width:100%;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top:50px;
+}
+
+div.task h2{
+    font-size: 4rem;
+    padding-bottom: 50px;
+}
+
+div.task ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+div.task ul li{
+    font-size: 2.5rem;
+    margin-top: 20px;
+    border: 2px solid black;
+    width:500px;
+    padding:10px 20px;
+}
