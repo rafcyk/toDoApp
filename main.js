@@ -3,47 +3,50 @@ const ul = document.querySelector('div.tasks div.wrapTasks ul');
 const inputTask = document.querySelector('div.containerAddTask div.wrapAddTask input');
 
 const deleteIconSrc = 'deleteIcon.png';
+
+//create new date object
 const timeAdd = new Date();
 
-
+//function add task to lst
 const addTask = () => {
+
+    //function will be execute when input has any value
     if (inputTask.value) {
+
+        //create elements of task
         const liItem = document.createElement('li');
-        liItem.textContent = inputTask.value;
 
-        const spanDeleteIcon = document.createElement('span');
 
-        spanDeleteIcon.textContent = `${timeAdd.getDate()}.${timeAdd.getMonth() + 1 < 10 ? "0" + timeAdd.getMonth() : timeAdd.getMonth() + 1}.${timeAdd.getFullYear()}`
+        const textTask = document.createElement('p');
+        textTask.className = 'textTask';
+        textTask.textContent = inputTask.value;
 
-        console.log()
+
+        const pDeleteIcon = document.createElement('p');
+
+        //add date of the create task
+        pDeleteIcon.textContent = `${timeAdd.getDate()}.${timeAdd.getMonth() + 1 < 10 ? "0" + (timeAdd.getMonth() + 1) : timeAdd.getMonth() + 1}.${timeAdd.getFullYear()}`;
 
         const deleteIcon = document.createElement('img');
         deleteIcon.src = deleteIconSrc;
 
         ul.appendChild(liItem);
-        liItem.appendChild(spanDeleteIcon);
-        spanDeleteIcon.appendChild(deleteIcon);
-
+        liItem.appendChild(textTask);
+        liItem.appendChild(pDeleteIcon);
+        pDeleteIcon.appendChild(deleteIcon);
 
         inputTask.value = '';
 
-
-
+        //funnction to remove task
         const removeTask = (e) => {
             e.target.parentNode.parentNode.remove();
         }
 
         deleteIcon.addEventListener('click', removeTask);
 
-    }
-
-    else {
+    } else {
         alert('Wpisz zadanie do zrobienia.')
     }
 }
-
-
-
-
 
 btnAddTask.addEventListener('click', addTask)

@@ -86,28 +86,69 @@ div.tasks div.wrapTasks ul{
 }
 
 div.tasks div.wrapTasks ul li{
-    position: relative;
     font-size: 2.5rem;
     margin-top: 20px;
     border: 2px solid black;
     border-radius: 10px;
-    width:600px;
+    width:700px;
     padding:10px 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
-div.tasks div.wrapTasks ul li span{
-    position: absolute;
-    right: 20px;
-    border-left: 2px solid black;
+div.tasks div.wrapTasks ul li p{
     padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-div.tasks div.wrapTasks ul li span img{
+div.tasks div.wrapTasks ul li p:last-of-type{
+    border-left: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.tasks div.wrapTasks ul li p img{
     margin-left: 20px;
     cursor: pointer;
     transition: .2s;
 }
 
-div.tasks div.wrapTasks ul li span img:hover{
+div.tasks div.wrapTasks ul li p img:hover{
     opacity:0.5;
+}
+
+/* ---------------------------  MEDIA QUERIES------------- */
+
+@media only screen and (max-width:750px){
+    html{
+        font-size: 7px;
+    }
+
+    div.containerAddTask div.wrapAddTask input{
+        width:250px;
+        height: 40px;
+    }
+    
+    div.containerAddTask div.wrapAddTask button.addTask{
+        padding: 5px 15px;
+        font-size: 2.5rem; 
+    }
+
+    div.tasks div.wrapTasks{
+        width: 100%;
+    }
+
+    div.tasks div.wrapTasks ul{
+        width: 100%;
+    }
+
+    div.tasks div.wrapTasks ul li{
+        width: 100%;
+        padding:5px 10px;
+        font-size: 2rem;
+    }
+
 }
